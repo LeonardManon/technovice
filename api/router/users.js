@@ -4,26 +4,26 @@ import  validators  from '../middlewares/validator.js';
 
 const userRouter = Router();
 
-// Récupérer les informations de tous profils
+// get all users
 userRouter.get('/api/users', userController.getAllUsers);
 
-// Récupérer les informations d'un seul profil
+// get a user by id
 userRouter.get('/api/users/:user_id(\\d+)', userController.getOneUserById);
 
-// Récupérer les informations de tous les professeurs
+// get all teachers
 userRouter.get('/api/teachers', userController.getAllTeachers);
 
-// Créer un profil (inscription)
+// create a user
 userRouter.post('/api/users', validators('users'), userController.createUser);
 
-// Modifier les informations du profil
+// update a user
 userRouter.patch(
     '/api/users/:user_id(\\d+)',
     validators('users'), 
     userController.updateUser
 );
 
-// Supprimer un profil
+// delete a user
 userRouter.delete('/api/users/:user_id(\\d+)', userController.deleteUser);
 
 export { userRouter };
