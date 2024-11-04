@@ -4,21 +4,21 @@ import validators from '../middlewares/validator.js';
 
 const topicRouter = Router();
 
-// SUJET DANS LES FORUM
+// SUBJECT IN THE FORUM
 
-// Récupérer les informations de tous les sujets
+// get all topics
 topicRouter.get('/api/topics', topicController.getAllTopics);
 
-// Récupérer les informations d'un seul sujet via son id
+// geta topic by id
 topicRouter.get('/api/topics/:topic_id(\\d+)', topicController.getOneTopicById);
 
-// Créer un sujet
+// create a topic
 topicRouter.post('/api/topics',validators('topics'), topicController.createTopic);
 
-// Mettre à jour un sujet
+// update a topic
 topicRouter.patch('/api/topics/:topic_id(\\d+)', topicController.updateTopic);
 
-// Supprimer un sujet
+// delete a topic
 topicRouter.delete('/api/topics/:topic_id(\\d+)', topicController.deleteTopic);
 
 export { topicRouter };

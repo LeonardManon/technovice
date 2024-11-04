@@ -3,16 +3,16 @@ import { watchesController } from '../controllers/watchesController.js';
 
 const watchesRouter = Router();
 
-// Obtenir les cours commencés par un utilisateur
+// get all watches
 watchesRouter.get('/api/watches/users/:user_id(\\d+)', watchesController.getAllWatchesByUserId);
 
-// Ajouter un cours à la liste des cours commencés
+// add a course to the list of courses started by a user
 watchesRouter.post(
     '/api/watches/courses/:course_id(\\d+)/users/:user_id(\\d+)',
     watchesController.createWatch,
 );
 
-// Supprimer un cours commencé (parce qu'on l'a fini en fait tavu)
+// delete a course from the list of courses started by a user
 watchesRouter.delete(
     '/api/watches/courses/:course_id(\\d+)/users/:user_id(\\d+)',
     watchesController.deleteWatch,

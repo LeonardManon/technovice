@@ -5,7 +5,7 @@ import validators from '../middlewares/validator.js';
 
 const commentRouter = Router();
 
-// MESSAGE SUR UN SUJET DANS LE FORUM
+// MESSAGE ON A SUBJECT IN THE FORUM
 
 // Create a message
 commentRouter.post(

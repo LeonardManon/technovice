@@ -7,16 +7,16 @@ const courseRouter = Router();
 // Fetch data from all courses
 courseRouter.get('/api/courses', coursesController.getAllCourses);
 
-// Fetch data from a co
+// Fetch data from a course by id
 courseRouter.get('/api/courses/:course_id(\\d+)', coursesController.getOneCourseById);
 
-// Créer un cours
+// create a course
 courseRouter.post('/api/courses', validators('courses'), coursesController.createCourse);
 
-// Mettre à jour un cours
+//update a course
 courseRouter.patch('/api/courses/:course_id(\\d+)',validators('courses'), coursesController.updateCourse);
 
-// Supprimer un cours
+// delete a course
 courseRouter.delete('/api/courses/:course_id(\\d+)', coursesController.deleteCourse);
 
 export { courseRouter };
